@@ -1,1 +1,63 @@
-echo "olá"
+#!/bin/bash
+
+# Verifica se o script está sendo executado com privilégios de root
+if [ "$EUID" -ne 0 ]; then
+  echo "Por favor, execute como root (sudo)."
+  exit
+fi
+
+# Atualiza o sistema e os repositórios
+echo "Atualizando o sistema..."
+sudo apt update && sudo apt upgrade -y
+
+# Instala o VSCode
+echo "Instalando o Visual Studio Code..."
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt update
+sudo apt install code -y
+
+# Instala o Google Chrome
+echo "Instalando o Google Chrome..."
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb -y
+rm google-chrome-stable_current_amd64.deb
+
+# Instala o Insomnia REST
+echo "Instalando o Insomnia REST..."
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+sudo apt update
+sudo apt install insomnia -y
+
+# Instala o Git
+echo "Instalando o Git..."
+sudo apt install git -y
+
+# Instala o NVM
+echo "Instalando o NVM..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source ~/.bashrc
+nvm install --lts
+
+# Instala o DBeaver
+echo "Instalando o DBeaver..."
+wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo apt-key add -
+echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+sudo apt update
+sudo apt install dbeaver-ce -y
+
+# Instala o FileZilla
+echo "Instalando o FileZilla..."
+sudo apt install filezilla -y
+
+# Instala o OBS Studio
+echo "Instalando o OBS Studio..."
+sudo apt install obs-studio -y
+
+# Instala o Raspberry Pi Imager
+echo "Instalando o Raspberry Pi Imager..."
+sudo apt install rpi-imager -y
+
+echo "Instalação concluída!"
