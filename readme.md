@@ -1,6 +1,3 @@
-Claro! Aqui está todo o conteúdo do `README.md` em Markdown:
-
-```markdown
 # Setup de Ferramentas para Desenvolvedores
 
 Este projeto oferece um script em Bash que automatiza a instalação de ferramentas essenciais para um ambiente de desenvolvimento em sistemas Linux (baseados em Debian/Ubuntu). O script instala editores de código, navegadores, gerenciadores de banco de dados e outras utilidades importantes para desenvolvedores.
@@ -64,4 +61,3 @@ Este projeto é licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mai
 ### Observação
 
 Este script instala as ferramentas mais utilizadas em ambientes de desenvolvimento. Para configurações adicionais ou mais específicas, consulte a documentação oficial de cada ferramenta.
-```
