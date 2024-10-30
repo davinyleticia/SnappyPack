@@ -61,3 +61,5 @@ Este projeto é licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mai
 ### Observação
 
 Este script instala as ferramentas mais utilizadas em ambientes de desenvolvimento. Para configurações adicionais ou mais específicas, consulte a documentação oficial de cada ferramenta.
+
+
