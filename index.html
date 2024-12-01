@@ -27,19 +27,30 @@ rm -f google-chrome-stable_current_amd64.deb
 
 # Instala o Insomnia REST
 echo "Instalando o Insomnia REST..."
-wget https://updates.insomnia.rest/downloads/ubuntu/latest?&app=com.insomnia.app&source=website -O insomnia.deb
-dpkg -i insomnia.deb
-apt-get install -f -y
-rm -f insomnia.deb
+wget https://updates.insomnia.rest/downloads/ubuntu/latest\?app=com.insomnia.app\&source=website -O insomnia.deb
+if [ -f insomnia.deb ]; then
+  sudo dpkg -i insomnia.deb
+  sudo apt-get install -f -y
+  rm -f insomnia.deb
+else
+  echo "Erro ao baixar o Insomnia. Verifique sua conexão ou a URL."
+  exit 1
+fi
 
 # Instala o Git
 echo "Instalando o Git..."
 apt install git -y
 
-# Instala o NVM
 echo "Instalando o NVM..."
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-echo "NVM instalado. Por favor, reinicie o terminal para começar a usar."
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+if command -v nvm > /dev/null; then
+  echo "NVM instalado com sucesso."
+else
+  echo "Erro ao instalar o NVM. Verifique sua conexão e tente novamente."
+  exit 1
+fi
 
 # Instala o DBeaver
 echo "Instalando o DBeaver..."
