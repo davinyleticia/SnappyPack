@@ -2,61 +2,63 @@
 
 # Verifica se o script está sendo executado com privilégios de root
 if [ "$EUID" -ne 0 ]; then
-  echo "Por favor, execute como root (sudo)."
-  exit
+  echo "Por favor, execute este script com privilégios de root (sudo)."
+  exit 1
 fi
 
 # Atualiza o sistema e os repositórios
 echo "Atualizando o sistema..."
-sudo apt update && sudo apt upgrade -y
+apt update && apt upgrade -y
 
 # Instala o VSCode
 echo "Instalando o Visual Studio Code..."
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt update
-sudo apt install code -y
+install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+rm -f packages.microsoft.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+apt update
+apt install code -y
 
 # Instala o Google Chrome
 echo "Instalando o Google Chrome..."
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb -y
-rm google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb -y
+rm -f google-chrome-stable_current_amd64.deb
 
 # Instala o Insomnia REST
 echo "Instalando o Insomnia REST..."
 wget https://updates.insomnia.rest/downloads/ubuntu/latest?&app=com.insomnia.app&source=website -O insomnia.deb
-sudo dpkg -i insomnia.deb
-sudo apt-get install -f
+dpkg -i insomnia.deb
+apt-get install -f -y
+rm -f insomnia.deb
 
 # Instala o Git
 echo "Instalando o Git..."
-sudo apt install git -y
+apt install git -y
 
 # Instala o NVM
 echo "Instalando o NVM..."
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+echo "NVM instalado. Por favor, reinicie o terminal para começar a usar."
 
 # Instala o DBeaver
 echo "Instalando o DBeaver..."
-wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo apt-key add -
-echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
-sudo apt update
-sudo apt install dbeaver-ce -y
+wget -O- https://dbeaver.io/debs/dbeaver.gpg.key | tee /usr/share/keyrings/dbeaver-keyring.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/dbeaver-keyring.gpg] https://dbeaver.io/debs/dbeaver-ce /" > /etc/apt/sources.list.d/dbeaver.list
+apt update
+apt install dbeaver-ce -y
 
 # Instala o FileZilla
 echo "Instalando o FileZilla..."
-sudo apt install filezilla -y
+apt install filezilla -y
 
 # Instala o OBS Studio
 echo "Instalando o OBS Studio..."
-sudo apt install obs-studio -y
+apt install obs-studio -y
 
 # Instala o Raspberry Pi Imager
 echo "Instalando o Raspberry Pi Imager..."
-sudo apt install rpi-imager -y
+apt install rpi-imager -y
 
-echo "Instalação concluída!"
+echo "Instalação concluída! É recomendável reiniciar o terminal para garantir que todas as alterações sejam aplicadas."
+
