@@ -3,6 +3,7 @@
 # Verifica se o script está sendo executado com privilégios de root
 if [ "$EUID" -ne 0 ]; then
   echo "Por favor, execute este script com privilégios de root (sudo)."
+  echo "curl -sSL runpacks.vidal.dev.br | sudo bash"
   exit 1
 fi
 
@@ -42,16 +43,11 @@ echo "Instalando o Git..."
 apt install git -y
 
 echo "Instalando o NVM..."
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh
 echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc
 echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc
 source ~/.bashrc
-if command -v nvm > /dev/null; then
-  echo "NVM instalado com sucesso."
-else
-  echo "Erro ao instalar o NVM. Verifique sua conexão e tente novamente."
-  exit 1
-fi
+
 
 # Instala o DBeaver
 echo "Instalando o DBeaver..."
