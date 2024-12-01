@@ -26,10 +26,9 @@ rm google-chrome-stable_current_amd64.deb
 
 # Instala o Insomnia REST
 echo "Instalando o Insomnia REST..."
-echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
-sudo apt update
-sudo apt install insomnia -y
+wget https://updates.insomnia.rest/downloads/ubuntu/latest?&app=com.insomnia.app&source=website -O insomnia.deb
+sudo dpkg -i insomnia.deb
+sudo apt-get install -f
 
 # Instala o Git
 echo "Instalando o Git..."
