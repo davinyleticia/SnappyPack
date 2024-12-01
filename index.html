@@ -43,12 +43,29 @@ echo "Instalando o Git..."
 apt install git -y
 
 echo "Instalando o NVM..."
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh  | bash
-echo "Digite o seu nome de usuário:"
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+# Solicita o nome do usuário
+echo "Digite o nome do usuário onde o NVM será configurado:"
 read user_home
-echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${user_home}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"' >> ~/.bashrc
-echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc
-source ~/.bashrc
+
+# Garante que o nome do usuário seja válido
+if id "$user_home" &>/dev/null; then
+  user_dir="/home/$user_home"
+  echo "Configurando o NVM para o usuário $user_home no diretório $user_dir."
+
+  # Configura o NVM_DIR para o usuário especificado
+  echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "'"$user_dir"'/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"' >> "$user_dir/.bashrc"
+  echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> "$user_dir/.bashrc"
+
+  # Carrega as configurações do usuário
+  su - "$user_home" -c "source ~/.bashrc"
+
+  echo "NVM instalado e configurado para o usuário $user_home."
+else
+  echo "Usuário $user_home não encontrado. Certifique-se de que o nome está correto."
+  exit 1
+fi
 
 
 # Instala o DBeaver
