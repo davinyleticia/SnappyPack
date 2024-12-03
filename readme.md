@@ -30,7 +30,7 @@ Para rodar o script, é necessário:
 Você pode executar o script diretamente usando o comando `curl`:
 
 ```bash
-curl -sSL runpacks.vidal.dev.br | sudo bash
+curl -sSL snappyinstall.codes/start | sudo bash
 ```
 
 Este comando baixa e executa o script diretamente, garantindo uma instalação rápida e sem a necessidade de baixar o arquivo manualmente.
