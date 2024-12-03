@@ -3,12 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exibir README do GitHub</title>
+  <title>Exibir README - SnappyInstall</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .content {
+      background-color: white;
+      padding: 20px;
+      width: 80%;
+      max-width: 900px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
-  <h1>Conteúdo do README</h1>
-  <pre id="readmeContent">Carregando...</pre>
+  <div class="content">
+    <h1>Conteúdo do README</h1>
+    <div id="readmeContent">Carregando...</div>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     fetch('https://api.github.com/repos/davinyleticia/snappyInstall/readme', {
       headers: {
@@ -17,7 +39,8 @@
     })
     .then(response => response.text())
     .then(data => {
-      document.getElementById('readmeContent').textContent = data;
+      const htmlContent = marked(data);  // Converte o Markdown para HTML
+      document.getElementById('readmeContent').innerHTML = htmlContent;
     })
     .catch(error => {
       document.getElementById('readmeContent').textContent = 'Erro ao carregar o README.';
