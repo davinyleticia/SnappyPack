@@ -4,6 +4,8 @@
 
 This project provides a Bash script that automates the installation of essential tools for a development environment on Linux (Debian/Ubuntu-based) systems. The script installs code editors, web browsers, database managers, and other important developer utilities.
 
+[http//SnappyInstall.codes](SnappyInstall.codes)
+
 <img class="mascote" src='http://snappyinstall.codes/img/mascote.png'/>
 
 ## Installed Tools (DEV Package)
