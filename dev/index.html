@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Inicializando o SnappyInstall (Pacote DEV)"
+sleep 80
+
 # Verifica se o script está sendo executado com privilégios de root
 if [ "$EUID" -ne 0 ]; then
   echo "Por favor, execute este script com privilégios de root (sudo)."
@@ -87,4 +90,4 @@ apt install obs-studio -y
 echo "Instalando o Raspberry Pi Imager..."
 apt install rpi-imager -y
 
-echo "Instalação concluída! É recomendável reiniciar o terminal para garantir que todas as alterações sejam aplicadas."
+echo "Instalação concluída SnappyInstall (Pacote DEV)! É recomendável reiniciar o terminal para garantir que todas as alterações sejam aplicadas."
