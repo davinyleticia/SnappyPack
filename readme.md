@@ -1,69 +1,70 @@
 # SnappyInstall
 
-## Setup de Ferramentas para Desenvolvedores
+## Developer Tools Setup
 
-Este projeto oferece um script em Bash que automatiza a instalação de ferramentas essenciais para um ambiente de desenvolvimento em sistemas Linux (baseados em Debian/Ubuntu). O script instala editores de código, navegadores, gerenciadores de banco de dados e outras utilidades importantes para desenvolvedores.
+This project provides a Bash script that automates the installation of essential tools for a development environment on Linux (Debian/Ubuntu-based) systems. The script installs code editors, web browsers, database managers, and other important developer utilities.
 
 <img class="mascote" src='http://snappyinstall.codes/img/mascote.png'/>
 
-## Ferramentas Instaladas (Pacote DEV)
+## Installed Tools (DEV Package)
 
-O script instalará as seguintes ferramentas:
+The script will install the following tools:
 
-- **Visual Studio Code**: Editor de código da Microsoft, altamente popular entre desenvolvedores.
-- **Google Chrome**: Navegador de internet.
-- **Insomnia REST**: Ferramenta para teste de APIs REST.
-- **Git**: Sistema de controle de versões.
-- **NVM**: Node Version Manager, para gerenciar versões do Node.js.
-- **DBeaver**: Cliente de banco de dados universal.
-- **FileZilla**: Cliente FTP.
-- **OBS Studio**: Software de gravação de tela e transmissão ao vivo.
-- **Raspberry Pi Imager**: Ferramenta de gravação de sistema para cartões SD e drives USB.
+- **Visual Studio Code**: Microsoft's code editor, highly popular among developers.
+- **Google Chrome**: Internet browser.
+- **Insomnia REST**: Tool for testing REST APIs.
+- **Git**: Version control system.
+- **NVM**: Node Version Manager, to manage Node.js versions.
+- **DBeaver**: Universal database client.
+- **FileZilla**: FTP client.
+- **OBS Studio**: Screen recording and live streaming software.
+- **Raspberry Pi Imager**: System burning tool for SD cards and USB drives.
 
-## Pré-requisitos
+## Prerequisites
 
-Para rodar o script, é necessário:
+To run the script, you need to:
 
-- **Sistema Operacional**: Ubuntu, Debian, ou qualquer distribuição Linux baseada em `apt`.
-- **Privilégios de Superusuário**: Execute o script com `sudo` para permitir a instalação dos pacotes.
+- **Operating Syste**: Ubuntu, Debian, or any .NET-based Linux distribution `apt`.
+- **Privilégios de Superusuário**: Run the script with sudoto allow installation of packages.
 
-## Como Usar
+## How to Use
 
-Você pode executar o script diretamente usando o comando `curl`:
+You can run the script directly using the command `curl`:
 
 ```bash
 curl -sSL snappyinstall.codes/dev | sudo bash
 ```
 
-Este comando baixa e executa o script diretamente, garantindo uma instalação rápida e sem a necessidade de baixar o arquivo manualmente.
+This command downloads and runs the script directly, ensuring a quick installation without the need to download the file manually.
 
-## Estrutura do Script
+## Script Structure
 
-O script segue a seguinte estrutura:
+The script follows the following structure:
 
-1. **Verificação de Permissões**: Confirma que o usuário possui privilégios `sudo`.
-2. **Atualização do Sistema**: Atualiza o sistema para evitar conflitos na instalação.
-3. **Instalação das Ferramentas**: Baixa e instala cada ferramenta, utilizando `apt` ou arquivos `.deb`, quando necessário.
-4. **Limpeza**: Remove arquivos temporários baixados, como pacotes `.deb`.
+1. **Permissions Check**: Confirms that the user has privileges `sudo`.
+2. **System Update**: Updates the system to avoid installation conflicts.
+3. **Installing Tools**: Downloads and installs each tool, using aptor files .debwhen necessary.
+4. **Cleanup**: Removes downloaded temporary files such as `.deb`.
 
-## Solução de Problemas
+## Troubleshooting
 
-- **Erro de Permissão**: Certifique-se de executar o script com `sudo`.
-- **Dependências Faltantes**: Durante a execução, o `apt` pode solicitar a instalação de dependências adicionais para algumas ferramentas.
-- **Distribuição Não Suportada**: Este script é feito para sistemas baseados em `apt`. Distribuições como Fedora ou Arch Linux precisarão de adaptações no script.
+- **Permission Error**: Make sure you run the script with `sudo`.
+- **Missing Dependencies**: During runtime, `apt` may prompt to install additional dependencies for some tools.
+- **Unsupported Distribution**: This script is made for Linux-based systems `apt`. Distributions like Fedora or Arch Linux will require adaptations to the script.
 
-## Contribuição
+## Contribution
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
-
-## Licença
-
-Este projeto é licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Contributions are welcome! Feel free to open an *issue* or submit a *pull request* .
 
 
-## Contribuidores 🤝
+## License
 
-Agradecemos a todos que contribuem para este projeto! 🎉
+This project is licensed under the MIT License. See the file LICENSEfor more details.
+
+## Contributors 🤝
+
+We thank everyone who contributes to this project! 🎉
+
 
 <table>
   <tr>
@@ -72,7 +73,7 @@ Agradecemos a todos que contribuem para este projeto! 🎉
         <img src="https://avatars.githubusercontent.com/davinyleticia" width="200px;" height="203px" alt="Foto do Contribuidor"/><br>
         <sub><b>Daviny Letícia</b></sub>
       </a><br>
-      Fundadora
+      Founder
     </td>
     
 
@@ -82,8 +83,7 @@ Agradecemos a todos que contribuem para este projeto! 🎉
 
 ---
 
-### Observação
+### Observation
 
-Este script instala as ferramentas mais utilizadas em ambientes de desenvolvimento. Para configurações adicionais ou mais específicas, consulte a documentação oficial de cada ferramenta.
-
+This script installs the most commonly used tools in development environments. For additional or more specific configurations, consult the official documentation for each tool.
 
