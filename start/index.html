@@ -1,0 +1,90 @@
+#!/bin/bash
+
+# Verifica se o script está sendo executado com privilégios de root
+if [ "$EUID" -ne 0 ]; then
+  echo "Por favor, execute este script com privilégios de root (sudo)."
+  echo "curl -sSL runpacks.vidal.dev.br | sudo bash"
+  exit 1
+fi
+
+# Atualiza o sistema e os repositórios
+echo "Atualizando o sistema..."
+apt update && apt upgrade -y
+
+# Instala o VSCode
+echo "Instalando o Visual Studio Code..."
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+rm -f packages.microsoft.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+apt update
+apt install code -y
+
+# Instala o Google Chrome
+echo "Instalando o Google Chrome..."
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb -y
+rm -f google-chrome-stable_current_amd64.deb
+
+# Instala o Insomnia REST
+echo "Instalando o Insomnia REST..."
+wget https://updates.insomnia.rest/downloads/ubuntu/latest\?app=com.insomnia.app\&source=website -O insomnia.deb
+if [ -f insomnia.deb ]; then
+  sudo dpkg -i insomnia.deb
+  sudo apt-get install -f -y
+  rm -f insomnia.deb
+else
+  echo "Erro ao baixar o Insomnia. Verifique sua conexão ou a URL."
+  exit 1
+fi
+
+# Instala o Git
+echo "Instalando o Git..."
+apt install git -y
+
+echo "Instalando o NVM..."
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+# Solicita o nome do usuário
+echo "Digite o nome do usuário onde o NVM será configurado:"
+read user_home
+
+# Garante que o nome do usuário seja válido
+if id "$user_home" &>/dev/null; then
+  user_dir="/home/$user_home"
+  echo "Configurando o NVM para o usuário $user_home no diretório $user_dir."
+
+  # Configura o NVM_DIR para o usuário especificado
+  echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "'"$user_dir"'/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"' >> "$user_dir/.bashrc"
+  echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> "$user_dir/.bashrc"
+
+  # Carrega as configurações do usuário
+  su - "$user_home" -c "source ~/.bashrc"
+
+  echo "NVM instalado e configurado para o usuário $user_home."
+else
+  echo "Usuário $user_home não encontrado. Certifique-se de que o nome está correto."
+  exit 1
+fi
+
+
+# Instala o DBeaver
+echo "Instalando o DBeaver..."
+wget -O- https://dbeaver.io/debs/dbeaver.gpg.key | tee /usr/share/keyrings/dbeaver-keyring.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/dbeaver-keyring.gpg] https://dbeaver.io/debs/dbeaver-ce /" > /etc/apt/sources.list.d/dbeaver.list
+apt update
+apt install dbeaver-ce -y
+
+# Instala o FileZilla
+echo "Instalando o FileZilla..."
+apt install filezilla -y
+
+# Instala o OBS Studio
+echo "Instalando o OBS Studio..."
+apt install obs-studio -y
+
+# Instala o Raspberry Pi Imager
+echo "Instalando o Raspberry Pi Imager..."
+apt install rpi-imager -y
+
+echo "Instalação concluída! É recomendável reiniciar o terminal para garantir que todas as alterações sejam aplicadas."
