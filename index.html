@@ -26,16 +26,17 @@
 </head>
 <body>
   <div class="content">
-    <h1>Conteúdo do README</h1>
+    <h1>SnappyInstall</h1>
     <div id="readmeContent">Carregando...</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    fetch('https://raw.githubusercontent.com/davinyleticia/snappyInstall/main/README.md')
-      .then(response => response.text())
+    fetch('https://api.github.com/repos/davinyleticia/snappyInstall/contents/README.md')
+      .then(response => response.json())
       .then(data => {
-        const htmlContent = marked(data);  // Converte o Markdown para HTML
+        const content = atob(data.content);  // Decodifica o conteúdo base64
+        const htmlContent = marked(content); // Converte o Markdown para HTML
         document.getElementById('readmeContent').innerHTML = htmlContent;
       })
       .catch(error => {
@@ -44,4 +45,5 @@
   </script>
 </body>
 </html>
+
 
