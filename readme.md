@@ -60,6 +60,26 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma *issue* ou e
 
 Este projeto é licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
+
+## Contribuidores 🤝
+
+Agradecemos a todos que contribuem para este projeto! 🎉
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/davinyleticia">
+        <img src="https://avatars.githubusercontent.com/davinyleticia" width="100px;" alt="Foto do Contribuidor"/><br>
+        <sub><b>Daviny Letícia</b></sub>
+      </a><br>
+      🚀 Fundadora
+    </td>
+    
+
+  </tr>
+</table>
+
+
 ---
 
 ### Observação
