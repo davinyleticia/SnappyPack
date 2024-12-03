@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exibir README - SnappyInstall</title>
+  <title>SnappyInstall</title>
   <style>
     body {
       background-color: #f0f0f0;
@@ -22,6 +22,25 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       font-size: 1.5rem;
     }
+    .content .repo-git{
+      width: 40px;
+      padding: 0 26px;
+    }
+    nav{
+      display: flex;
+      justify-content: center
+    }
+    nav p{
+      display: flex;
+      padding: 0 26px;
+      align-items: center
+    }
+    nav a{
+      text-decoration: none;
+    }
+    nav a:hover{
+      text-decoration: underline;
+    }
     .content .mascote{
       width: 100%;
     height: 780px;
@@ -31,6 +50,10 @@
 </head>
 <body>
   <div class="content">
+    <nav>
+      <a href="https://github.com/davinyleticia/snappyInstall"><p><img class="repo-git" src="img/github.png"/> repositório</p></a>
+      <a href="https://github.com/davinyleticia/snappyInstall/issues"><p><img class="repo-git" src="img/download.png"/> issue</p></a>
+    </nav>
     <div id="readmeContent">Carregando...</div>
   </div>
   <script>
