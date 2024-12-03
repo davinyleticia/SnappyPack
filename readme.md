@@ -69,7 +69,7 @@ Agradecemos a todos que contribuem para este projeto! 🎉
   <tr>
     <td align="center">
       <a href="https://github.com/davinyleticia">
-        <img src="https://avatars.githubusercontent.com/davinyleticia" width="100px;" height="100px" alt="Foto do Contribuidor"/><br>
+        <img src="https://avatars.githubusercontent.com/davinyleticia" width="200px;" height="203px" alt="Foto do Contribuidor"/><br>
         <sub><b>Daviny Letícia</b></sub>
       </a><br>
       🚀 Fundadora
