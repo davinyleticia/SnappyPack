@@ -6,7 +6,7 @@ Este projeto oferece um script em Bash que automatiza a instalação de ferramen
 
 ![mascote.png](http://snappyinstall.codes/img/mascote.png)
 
-## Ferramentas Instaladas pacote dev
+## Ferramentas Instalados ( Pacote dev )
 
 O script instalará as seguintes ferramentas:
 
