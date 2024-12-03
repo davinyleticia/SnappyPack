@@ -11,7 +11,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       margin: 0;
     }
     .content {
@@ -23,20 +22,23 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   </style>
+   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <div class="content">
-    <h1>SnappyInstall</h1>
     <div id="readmeContent">Carregando...</div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    fetch('https://api.github.com/repos/davinyleticia/snappyInstall/readme')
+    fetch('https://api.github.com/repos/davinyleticia/snappyInstall/readme', {
+            headers: {
+                'Accept': 'application/vnd.github.v3.raw' // Para obter o conteúdo em formato bruto
+            }
+        })
       .then(response => response.json())
       .then(data => {
-        const content = data.content;  
-        const htmlContent = marked(content); // Converte o Markdown para HTML
+        const content = atob(data.content);  
+        const htmlContent = marked.parse(content); // Converte o Markdown para HTML
+        console.log(htmlContent)
         document.getElementById('readmeContent').innerHTML = htmlContent;
       })
       .catch(error => {
