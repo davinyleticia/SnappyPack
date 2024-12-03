@@ -29,43 +29,43 @@
     <div id="readmeContent">Carregando...</div>
   </div>
   <script>
+    async function carregarReadme() {
+      const url = 'https://api.github.com/repos/davinyleticia/snappyInstall/readme'; // Corrigido para acessar o conteúdo correto
 
-async function carregarReadme() {
-  const url = 'https://api.github.com/repos/davinyleticia/snappyInstall/readme';
-  try {
-    // Tenta buscar o README do repositório
-    const response = await fetch(url, {
-      headers: {
-        'Accept': 'application/vnd.github.v3.raw' // Para obter o conteúdo em formato bruto
+      try {
+        // Tenta buscar o README do repositório
+        const response = await fetch(url, {
+          headers: {
+            'Accept': 'application/vnd.github.v3.raw' // Garantir que o conteúdo será retornado em formato bruto
+          }
+        });
+
+        // Verifica se a resposta está OK
+        if (!response.ok) {
+          throw new Error('Erro ao carregar o README.md: ' + response.status + ' - ' + response.statusText);
+        }
+
+        const data = await response.text(); // Resposta como JSON
+        // const textoReadmeBase64 = data.content; // Conteúdo codificado em Base64
+        
+        // // Decodifica o conteúdo Base64
+        // const textoReadme = atob(textoReadmeBase64);
+
+        // Converte o Markdown para HTML usando a biblioteca marked
+        const readmeContent = marked.parse(data);
+
+        document.getElementById('readmeContent').innerHTML = readmeContent;
+      } catch (error) {
+        // Lida com erros e exibe uma mensagem de erro
+        console.error(error); // Loga o erro no console para depuração
+        document.getElementById('readmeContent').textContent = 'Erro ao carregar o README. Detalhes: ' + error.message;
       }
-    });
-
-    // Verifica se a resposta está OK
-    if (!response.ok) {
-      throw new Error('Erro ao carregar o README.md: ' + response.statusText);
     }
 
-    const data = await response.json(); // Resposta como JSON
-    const textoReadmeBase64 = data.content; // Conteúdo em Base64
-    
-    // Decodifica o conteúdo Base64
-    const textoReadme = atob(textoReadmeBase64);
-
-    // Converte o Markdown para HTML usando a biblioteca marked
-    const readmeContent = marked.parse(textoReadme);
-
-    document.getElementById('readmeContent').innerHTML = readmeContent;
-  } catch (error) {
-    // Lida com erros e exibe uma mensagem de erro
-    console.error(error); // Loga o erro no console para depuração
-    document.getElementById('readmeContent').textContent = 'Erro ao carregar o README.';
-  }
-}
-
-// Carregar o conteúdo do README ao iniciar
-document.addEventListener('DOMContentLoaded', () => {
-  carregarReadme(); // Chama a função correta quando o DOM estiver totalmente carregado
-});
+    // Carregar o conteúdo do README ao iniciar
+    document.addEventListener('DOMContentLoaded', () => {
+      carregarReadme(); // Chama a função correta quando o DOM estiver totalmente carregado
+    });
   </script>
 </body>
 </html>
