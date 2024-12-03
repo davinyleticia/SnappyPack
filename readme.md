@@ -1,4 +1,4 @@
-# snappy install
+# snappyInstall
 
 Setup de Ferramentas para Desenvolvedores
 
