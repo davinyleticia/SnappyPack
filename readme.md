@@ -6,7 +6,7 @@ Este projeto oferece um script em Bash que automatiza a instalação de ferramen
 
 ![mascote.png](http://snappyinstall.codes/img/mascote.png)
 
-## Ferramentas Instaladas
+## Ferramentas Instaladas pacote dev
 
 O script instalará as seguintes ferramentas:
 
@@ -32,7 +32,7 @@ Para rodar o script, é necessário:
 Você pode executar o script diretamente usando o comando `curl`:
 
 ```bash
-curl -sSL snappyinstall.codes/start | sudo bash
+curl -sSL snappyinstall.codes/dev | sudo bash
 ```
 
 Este comando baixa e executa o script diretamente, garantindo uma instalação rápida e sem a necessidade de baixar o arquivo manualmente.
