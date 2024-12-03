@@ -6,7 +6,7 @@ Este projeto oferece um script em Bash que automatiza a instalação de ferramen
 
 <img class="mascote" src='http://snappyinstall.codes/img/mascote.png'/>
 
-## Ferramentas Instalados ( Pacote DEV )
+## Ferramentas Instaladas (Pacote DEV)
 
 O script instalará as seguintes ferramentas:
 
