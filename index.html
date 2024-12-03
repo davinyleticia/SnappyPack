@@ -32,19 +32,16 @@
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    fetch('https://api.github.com/repos/davinyleticia/snappyInstall/readme/', {
-      headers: {
-        'Accept': 'application/vnd.github.v3.raw'
-      }
-    })
-    .then(response => response.text())
-    .then(data => {
-      const htmlContent = marked(data);  // Converte o Markdown para HTML
-      document.getElementById('readmeContent').innerHTML = htmlContent;
-    })
-    .catch(error => {
-      document.getElementById('readmeContent').textContent = 'Erro ao carregar o README.';
-    });
+    fetch('https://raw.githubusercontent.com/davinyleticia/snappyInstall/main/README.md')
+      .then(response => response.text())
+      .then(data => {
+        const htmlContent = marked(data);  // Converte o Markdown para HTML
+        document.getElementById('readmeContent').innerHTML = htmlContent;
+      })
+      .catch(error => {
+        document.getElementById('readmeContent').textContent = 'Erro ao carregar o README.';
+      });
   </script>
 </body>
 </html>
+
