@@ -1,4 +1,6 @@
-# Setup de Ferramentas para Desenvolvedores
+# snappy install
+
+Setup de Ferramentas para Desenvolvedores
 
 Este projeto oferece um script em Bash que automatiza a instalação de ferramentas essenciais para um ambiente de desenvolvimento em sistemas Linux (baseados em Debian/Ubuntu). O script instala editores de código, navegadores, gerenciadores de banco de dados e outras utilidades importantes para desenvolvedores.
 
