@@ -73,7 +73,7 @@ We thank everyone who contributes to this project! 🎉
     <td align="center">
       <a href="https://github.com/davinyleticia">
         <img src="https://avatars.githubusercontent.com/davinyleticia" width="200px;" height="203px" alt="Foto do Contribuidor"/><br>
-        <sub><b>Daviny Letícia</b></sub>
+        <sub><b>DavinyLetícia</b></sub>
       </a><br>
       Founder
     </td>
