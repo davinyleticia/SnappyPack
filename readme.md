@@ -77,7 +77,6 @@ We thank everyone who contributes to this project! 🎉
       </a><br>
       Founder
     </td>
-
      <tr>
     <td align="center">
       <a href="https://github.com/DaniDJunior">
@@ -86,7 +85,6 @@ We thank everyone who contributes to this project! 🎉
       </a><br>
       Contributors
     </td>
-
      <tr>
     <td align="center">
       <a href="https://github.com/isjanebea">
@@ -95,8 +93,6 @@ We thank everyone who contributes to this project! 🎉
       </a><br>
       Contributors
     </td>
-    
-
   </tr>
 </table>
 
