@@ -16,7 +16,7 @@ The script will install the following tools:
 - **Google Chrome**: Internet browser.
 - **Insomnia REST**: Tool for testing REST APIs.
 - **Git**: Version control system.
-- **NVM**: Node Version Manager, to manage Node.js versions.
+- **N**: Node Version Manager, to manage Node.js versions.
 - **DBeaver**: Universal database client.
 - **FileZilla**: FTP client.
 - **OBS Studio**: Screen recording and live streaming software.
