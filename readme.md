@@ -85,15 +85,6 @@ We thank everyone who contributes to this project! 🎉
       </a><br>
       Contributors
     </td>
-     <tr>
-    <td align="center">
-      <a href="https://github.com/isjanebea">
-        <img src="https://avatars.githubusercontent.com/isjanebea" width="200px;" height="203px" alt="Foto do Contribuidor"/><br>
-        <sub><b>Beatriz Ramerindo</b></sub>
-      </a><br>
-      Contributors
-    </td>
-  </tr>
 </table>
 
 
