@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SnappyInstall - Developer Tools Setup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        .call-to-action {
+            background-color: #16a085;
+            padding: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contributor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .contributor img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SnappyInstall</h1>
+    <p>Fast and easy dev environment setup for Linux-based systems</p>
+</header>
+
+<div class="container">
+    <h2>What is SnappyInstall?</h2>
+    <p>SnappyInstall is an open-source Bash script that installs essential development tools and utilities on Debian/Ubuntu-based Linux systems. It helps you bootstrap your development setup with just one command.</p>
+
+    <h2>Installation</h2>
+    <p>To install everything in one go, run the following command:</p>
+    <pre><code>curl -sSL https://snappyinstall.codes/dev | sudo bash</code></pre>
+    <p>Make sure to run the command with <code>sudo</code> to allow package installations.</p>
+
+    <h2>Packages Available</h2>
+    <h3>Design Tools</h3>
+    <ul>
+        <li>Figma (Web)</li>
+        <li>GIMP</li>
+        <li>Inkscape</li>
+    </ul>
+
+    <h3>Data Tools</h3>
+    <ul>
+        <li>DBeaver</li>
+        <li>Insomnia</li>
+        <li>Postman</li>
+    </ul>
+
+    <h3>Development Tools</h3>
+    <ul>
+        <li>VS Code</li>
+        <li>Brave Browser</li>
+        <li>Terminator</li>
+        <li>Git</li>
+        <li>Node.js</li>
+        <li>Docker</li>
+    </ul>
+
+    <h2>Developer Tools Setup</h2>
+    <p>This project provides a Bash script that automates the installation of essential tools for a development environment on Linux (Debian/Ubuntu-based) systems. The script installs code editors, web browsers, database managers, and other important developer utilities.</p>
+
+    <h2>Prerequisites</h2>
+    <p>To run the script, you need:</p>
+    <ul>
+        <li><strong>Operating System:</strong> Ubuntu, Debian, or any Linux distribution that uses <code>apt</code>.</li>
+        <li><strong>Superuser Privileges:</strong> Run the script with <code>sudo</code> to allow installation of packages.</li>
+    </ul>
+
+    <h2>How to Use</h2>
+    <p>You can run the script directly using:</p>
+    <pre><code>curl -sSL https://snappyinstall.codes/dev | sudo bash</code></pre>
+    <p>This command downloads and runs the script immediately, ensuring a quick setup without needing to download files manually.</p>
+
+    <h2>Script Structure</h2>
+    <ul>
+        <li><strong>Permissions Check:</strong> Confirms the user has <code>sudo</code> privileges.</li>
+        <li><strong>System Update:</strong> Updates system packages to avoid installation conflicts.</li>
+        <li><strong>Installing Tools:</strong> Downloads and installs each tool using <code>apt</code> or <code>.deb</code> files when needed.</li>
+        <li><strong>Cleanup:</strong> Removes temporary files such as <code>.deb</code> packages.</li>
+    </ul>
+
+    <h2>Troubleshooting</h2>
+    <ul>
+        <li><strong>Permission Error:</strong> Ensure you are running the script with <code>sudo</code>.</li>
+        <li><strong>Missing Dependencies:</strong> The script may prompt for additional dependencies during execution.</li>
+        <li><strong>Unsupported Distribution:</strong> This script is designed for systems using <code>apt</code>. It will require adaptation for Fedora, Arch, or other distributions.</li>
+    </ul>
+
+    <h2>Contributing</h2>
+    <p>Contributions are welcome! Feel free to open an issue or submit a pull request on <a href="https://github.com/snappyinstall" target="_blank">GitHub</a>.</p>
+
+    <h2>License</h2>
+    <p>This project is licensed under the MIT License. See the <code>LICENSE</code> file for more details.</p>
+
+    <h2>Contributors</h2>
+    <p>We thank everyone who contributes to this project! 🎉</p>
+
+    <div class="contributor">
+        <img src="https://example.com/daviny-avatar.jpg" alt="Daviny Letícia">
+        <div>
+            <p><strong>Daviny Letícia</strong><br>Founder</p>
+        </div>
+    </div>
+
+    <div class="contributor">
+        <img src="https://example.com/daniele-avatar.jpg" alt="Daniele Junior">
+        <div>
+            <p><strong>Daniele Junior</strong><br>Contributor</p>
+        </div>
+    </div>
+</div>
+
+<div class="call-to-action">
+    <p>Start setting up your dev environment with SnappyInstall now!</p>
+    <a href="https://snappyinstall.codes/dev" class="cta-button">Run the Script</a>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 SnappyInstall. All rights reserved.</p>
+</footer>
+
+</body>
+
+</html>
