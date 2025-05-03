@@ -1,0 +1,59 @@
+#!/bin/bash
+
+echo "📊 Inicializando o SnappyInstall (Pacote DATA)..."
+sleep 2
+
+# Verifica permissões
+if [ "$EUID" -ne 0 ]; then
+  echo "❌ Execute com sudo: curl -sSL runpacks.vidal.dev.br/data | sudo bash"
+  exit 1
+fi
+
+echo "📦 Atualizando o sistema..."
+apt update && apt upgrade -y
+
+# Chrome
+echo "🌐 Instalando o Google Chrome..."
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb -y
+rm -f google-chrome-stable_current_amd64.deb
+
+# Git e Python
+echo "🐍 Instalando Python, pip e Git..."
+apt install -y python3 python3-pip git
+
+# VS Code
+echo "📝 Instalando o Visual Studio Code..."
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+rm -f packages.microsoft.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+apt update
+apt install code -y
+
+# Jupyter + bibliotecas
+echo "📚 Instalando Jupyter e bibliotecas Python..."
+pip3 install notebook jupyterlab pandas numpy matplotlib seaborn
+
+# DBeaver
+echo "🗃️ Instalando o DBeaver..."
+wget -O- https://dbeaver.io/debs/dbeaver.gpg.key | tee /usr/share/keyrings/dbeaver-keyring.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/dbeaver-keyring.gpg] https://dbeaver.io/debs/dbeaver-ce /" > /etc/apt/sources.list.d/dbeaver.list
+apt update
+apt install dbeaver-ce -y
+
+# LibreOffice Calc
+echo "📊 Instalando LibreOffice (Calc)..."
+apt install libreoffice-calc -y
+
+# R e RStudio (opcional)
+# echo "📈 Instalando R..."
+# apt install r-base -y
+# echo "📦 Baixando RStudio..."
+# wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2023.06.1-524-amd64.deb
+# apt install ./rstudio-*.deb -y
+# rm rstudio-*.deb
+
+echo ""
+echo "✅ SnappyInstall (Pacote DATA) finalizado com sucesso!"
+echo "🚀 Pronto para análise de dados!"
