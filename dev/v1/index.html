@@ -1,0 +1,85 @@
+#!/bin/bash
+
+echo "🔧 Inicializando o SnappyInstall (Pacote DEV)..."
+sleep 2
+
+# Verifica se está sendo executado como root
+if [ "$EUID" -ne 0 ]; then
+  echo "❌ Por favor, execute este script com privilégios de root (sudo)."
+  echo "Exemplo: curl -sSL runpacks.vidal.dev.br | sudo bash"
+  exit 1
+fi
+
+# Atualiza sistema
+echo "📦 Atualizando o sistema..."
+apt update && apt upgrade -y
+
+# Instala VS Code
+echo "📝 Instalando o Visual Studio Code..."
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+rm -f packages.microsoft.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+apt update
+apt install code -y
+
+# Instala Google Chrome
+echo "🌐 Instalando o Google Chrome..."
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb -y
+rm -f google-chrome-stable_current_amd64.deb
+
+# Instala Insomnia
+echo "🔌 Instalando o Insomnia REST..."
+wget -O insomnia.deb "https://updates.insomnia.rest/downloads/ubuntu/latest?app=com.insomnia.app&source=website"
+if [ -f insomnia.deb ]; then
+  dpkg -i insomnia.deb || apt-get install -f -y
+  rm -f insomnia.deb
+else
+  echo "⚠️ Erro ao baixar o Insomnia. Verifique sua conexão ou a URL."
+fi
+
+# Instala Git
+echo "🔃 Instalando o Git..."
+apt install git -y
+
+# Instala Node.js e 'n'
+echo "🟢 Instalando Node.js e N (Node Version Manager)..."
+if ! command -v node &> /dev/null; then
+  curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+  apt install -y nodejs
+else
+  echo "✅ Node.js já está instalado."
+fi
+
+echo "📦 Instalando 'n' via npm..."
+npm install -g n
+
+echo "📥 Instalando a versão LTS do Node.js via 'n'..."
+n lts
+hash -r  # Atualiza o PATH no terminal atual
+
+echo "📋 Versão do Node.js instalada: $(node -v)"
+
+# Instala DBeaver
+echo "🗃️ Instalando o DBeaver..."
+wget -O- https://dbeaver.io/debs/dbeaver.gpg.key | tee /usr/share/keyrings/dbeaver-keyring.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/dbeaver-keyring.gpg] https://dbeaver.io/debs/dbeaver-ce /" > /etc/apt/sources.list.d/dbeaver.list
+apt update
+apt install dbeaver-ce -y
+
+# Instala FileZilla
+echo "📁 Instalando o FileZilla..."
+apt install filezilla -y
+
+# Instala OBS Studio
+echo "🎥 Instalando o OBS Studio..."
+apt install obs-studio -y
+
+# Instala Raspberry Pi Imager
+echo "🍓 Instalando o Raspberry Pi Imager..."
+apt install rpi-imager -y
+
+echo ""
+echo "✅ Instalação concluída com sucesso!"
+echo "🚀 Reinicie o terminal para aplicar todas as alterações."
