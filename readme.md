@@ -6,8 +6,6 @@ This project provides a Bash script that automates the installation of essential
 
 [https://snappack.vidal.press](https://snappack.vidal.press)
 
-<img class="mascote" src='https://snappack.codes/img/mascote.png'/>
-
 <div class="container">
     <h2>What is snappack?</h2>
     <p>snappack is an open-source Bash script that installs essential development tools and utilities on Debian/Ubuntu-based Linux systems. It helps you bootstrap your development setup with just one command.</p>
