@@ -1,4 +1,4 @@
-# snappack
+# Snappack
 
 ## Developer Tools Setup
 
