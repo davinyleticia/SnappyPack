@@ -1,16 +1,16 @@
-# SnappyInstall
+# snappack
 
 ## Developer Tools Setup
 
 This project provides a Bash script that automates the installation of essential tools for a development environment on Linux (Debian/Ubuntu-based) systems. The script installs code editors, web browsers, database managers, and other important developer utilities.
 
-[https://SnappyInstall.vidal.press](https://SnappyInstall.vidal.press)
+[https://snappack.vidal.press](https://snappack.vidal.press)
 
-<img class="mascote" src='https://snappyinstall.codes/img/mascote.png'/>
+<img class="mascote" src='https://snappack.codes/img/mascote.png'/>
 
 <div class="container">
-    <h2>What is SnappyInstall?</h2>
-    <p>SnappyInstall is an open-source Bash script that installs essential development tools and utilities on Debian/Ubuntu-based Linux systems. It helps you bootstrap your development setup with just one command.</p>
+    <h2>What is snappack?</h2>
+    <p>snappack is an open-source Bash script that installs essential development tools and utilities on Debian/Ubuntu-based Linux systems. It helps you bootstrap your development setup with just one command.</p>
 <h2>Packages Available</h2>
 <h3>Design Tools</h3>
 <ul>
@@ -49,7 +49,7 @@ This project provides a Bash script that automates the installation of essential
     <h2>Installation</h2>
     <p>To install everything in one go, you can choose from the following categories.</p> 
     <p>To install a specific category, run the following command:</p>
-    <pre><code>curl -sSL https://snappyinstall.vidal.press/{packege} | sudo bash </code></pre>
+    <pre><code>curl -sSL https://snappack.vidal.press/{packege} | sudo bash </code></pre>
     <p>Packege: Dev, Design, Data<p>
     <p>Make sure to run the command with <code>sudo</code> to allow package installations.</p>
     <h2>Developer Tools Setup</h2>
@@ -62,7 +62,7 @@ This project provides a Bash script that automates the installation of essential
     </ul>
     <h2>How to Use</h2>
     <p>You can run the script directly using:</p>
-    <pre><code>curl -sSL https://snappyinstall.vidal.press/dev | sudo bash</code></pre>
+    <pre><code>curl -sSL https://snappack.vidal.press/dev | sudo bash</code></pre>
     <p>This command downloads and runs the script immediately, ensuring a quick setup without needing to download files manually.</p>
     <h2>Script Structure</h2>
     <ul>
@@ -78,7 +78,7 @@ This project provides a Bash script that automates the installation of essential
         <li><strong>Unsupported Distribution:</strong> This script is designed for systems using <code>apt</code>. It will require adaptation for Fedora, Arch, or other distributions.</li>
     </ul>
     <h2>Contributing</h2>
-    <p>Contributions are welcome! Feel free to open an issue or submit a pull request on <a href="https://github.com/davinyleticia/snappyInstall" target="_blank">GitHub</a>.</p>
+    <p>Contributions are welcome! Feel free to open an issue or submit a pull request on <a href="https://github.com/davinyleticia/snappack" target="_blank">GitHub</a>.</p>
     <h2>License</h2>
     <p>This project is licensed under the MIT License. See the <code>LICENSE</code> file for more details.</p>
     <h2>Contributors</h2>
@@ -100,8 +100,8 @@ This project provides a Bash script that automates the installation of essential
 </div>
 <div class="call-to-action">
     <p>Issues and Contributor!</p>
-    <a href="https://github.com/davinyleticia/snappyInstall/issues" class="cta-button">Issues</a>
+    <a href="https://github.com/davinyleticia/snappack/issues" class="cta-button">Issues</a>
 </div>
 <footer class="footer">
-    <p>&copy; 2025 SnappyInstall. All rights reserved. Make in Brasil</p>
+    <p>&copy; 2025 snappack. All rights reserved. Make in Brasil</p>
 </footer>
