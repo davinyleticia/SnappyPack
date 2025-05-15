@@ -1,4 +1,4 @@
-# Snappypack
+# Snappy Pack
 
 ## Developer Tools Setup
 
@@ -7,7 +7,7 @@ This project provides a Bash script that automates the installation of essential
 [https://snappypack.vidal.press](https://snappypack.vidal.press)
 
 <div class="container">
-    <h2>What is snappypack?</h2>
+    <h2>What is Snappy Pack?</h2>
     <p>snappypack is an open-source Bash script that installs essential development tools and utilities on Debian/Ubuntu-based Linux systems. It helps you bootstrap your development setup with just one command.</p>
 <h2>Packages Available</h2>
 <h3>Design Tools</h3>
