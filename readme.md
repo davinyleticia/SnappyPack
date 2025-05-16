@@ -84,7 +84,7 @@ This project provides a Bash script that automates the installation of essential
     <div class="contributor">
         <div>
             <p><strong>Daviny Letícia</strong><br>Founder</p>
-            <p></p><a href="https://github.com/davinyleticia">Github</a></p>
+            <p><a href="https://github.com/davinyleticia">Github</a></p>
         </div>
     </div>
 
