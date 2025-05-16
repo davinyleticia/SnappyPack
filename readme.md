@@ -1,4 +1,3 @@
-# Snappy Pack
 
 ## Developer Tools Setup
 
