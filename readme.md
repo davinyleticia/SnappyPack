@@ -88,13 +88,6 @@ This project provides a Bash script that automates the installation of essential
             <p></p><a href="https://github.com/davinyleticia">Github</a></p>
         </div>
     </div>
-    <div class="contributor">
-        <img src="https://avatars.githubusercontent.com/DaniDJunior" alt="Daniele Junior">
-        <div>
-            <p><strong>Daniele Junior</strong><br>Contributor</p>
-            <p></p><a href="https://github.com/DaniDJunior">Github</a></p>
-        </div>
-    </div>
 </div>
 <div class="call-to-action">
     <p>Issues and Contributor!</p>
