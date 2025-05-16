@@ -82,7 +82,6 @@ This project provides a Bash script that automates the installation of essential
     <h2>Contributors</h2>
     <p>We thank everyone who contributes to this project! 🎉</p>
     <div class="contributor">
-        <img src="https://avatars.githubusercontent.com/davinyleticia" alt="Daviny Letícia">
         <div>
             <p><strong>Daviny Letícia</strong><br>Founder</p>
             <p></p><a href="https://github.com/davinyleticia">Github</a></p>
