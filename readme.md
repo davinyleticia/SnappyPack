@@ -87,7 +87,7 @@ This project provides a Bash script that automates the installation of essential
             <p></p><a href="https://github.com/davinyleticia">Github</a></p>
         </div>
     </div>
-</div>
+
 <div class="call-to-action">
     <p>Issues and Contributor!</p>
     <a href="https://github.com/davinyleticia/snappypack/issues" class="cta-button">Issues</a>
