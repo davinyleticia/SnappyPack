@@ -3,7 +3,7 @@
 
 This project provides a Bash script that automates the installation of essential tools for a development environment on Linux (Debian/Ubuntu-based) systems. The script installs code editors, web browsers, database managers, and other important developer utilities.
 
-[https://snappypack.vidal.press](https://snappypack.vidal.press)
+
 
 <div class="container">
     <h2>What is Snappy Pack?</h2>
