@@ -46,7 +46,7 @@ This project provides a Bash script that automates the installation of essential
     <h2>Installation</h2>
     <p>To install everything in one go, you can choose from the following categories.</p> 
     <p>To install a specific category, run the following command:</p>
-    <pre><code>curl -sSL https://snappypack.vidal.press/{packege} | sudo bash </code></pre>
+    <pre><code>curl -sSL https://davinyleticia.github.io/SnappyPack/{packege} | sudo bash </code></pre>
     <p>Packege: Dev, Design, Data<p>
     <p>Make sure to run the command with <code>sudo</code> to allow package installations.</p>
     <h2>Developer Tools Setup</h2>
@@ -59,7 +59,7 @@ This project provides a Bash script that automates the installation of essential
     </ul>
     <h2>How to Use</h2>
     <p>You can run the script directly using:</p>
-    <pre><code>curl -sSL https://snappypack.vidal.press/dev | sudo bash</code></pre>
+    <pre><code>curl -sSL https://davinyleticia.github.io/SnappyPack/dev | sudo bash</code></pre>
     <p>This command downloads and runs the script immediately, ensuring a quick setup without needing to download files manually.</p>
     <h2>Script Structure</h2>
     <ul>
